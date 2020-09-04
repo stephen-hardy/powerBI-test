@@ -1,8 +1,17 @@
 <html>
   <body>
+		<div>To edit, please select only one item</div>
+		<label>Name<input type="text"></label>
+		<button>Save</button>
     <script>
-      document.body.innerText += location.hash;
-      window.addEventListener('hashchange', _ => document.body.innerText += location.hash);
+			const items = [,'alpha','bravo','charlie','delta','echo','foxtrot'],
+				ids = location.hash.slice(1).split(',').filter(Boolean)
+				input = document.getElementsByTagName('input')[0],
+				button = document.getElementsByTagName('button')[0];
+			document.getElementsByTagName('div')[0].hidden = ids.length === 1;
+			input.disabled = ids.length > 1; button.disabled = ids.length > 1;
+			ids.length === 1 && input.value = items[ids[0]];
+			button.addEventListener('click', _ => alert('Saved changes to item #' + ids[0]));
     </script>
   </body>
 </html>
