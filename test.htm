@@ -1,7 +1,8 @@
 <html>
   <body>
     <script>
-      document.write(location.hash);
+      document.body.innerText += location.hash;
+      window.addEventListener('hashchange', _ => document.body.innerText += location.hash);
     </script>
   </body>
 </html>
