@@ -13,7 +13,7 @@
 			document.getElementsByTagName('div')[0].hidden = ids.length === 1;
 			input.disabled = ids.length > 1; button.disabled = ids.length > 1;
 			ids.length === 1 && (input.value = items[ids[0]]);
-			button.addEventListener('click', _ => (document.getElementsByTagName('div')[0].innerText = 'Saved changes to item #' + ids[0]));
+			button.addEventListener('click', _ => (document.getElementsByTagName('div')[1].innerText = 'Saved changes to item #' + ids[0]));
     </script>
   </body>
 </html>
